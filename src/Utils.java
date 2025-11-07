@@ -17,4 +17,10 @@ public class Utils {
         }
         return sc.nextDouble();
     }
+
+    public static void menuEjercicios(int a){
+        System.out.println("Que quieres hacer?");
+        System.out.println("1-" + a + ". Ejercicio 1-" + a);
+        System.out.println( (a + 1) + ". Salir");
+    }
 }
