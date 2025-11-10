@@ -10,12 +10,28 @@ public class Utils {
         return sc.nextInt();
     }
 
+    public static int validaPositivoInt(int posInt){
+        while(posInt < 0){
+            System.out.print("El número debe ser positivo, prueba otra vez: ");
+            posInt = validaInt();
+        }
+        return posInt;
+    }
+
     public static double validaDouble(){
         while(!sc.hasNextDouble()){
             System.out.print("El número introducido no es válido, prueba otra vez: ");
             sc.next();
         }
         return sc.nextDouble();
+    }
+
+    public static double validaPositivoDouble(double posDou){
+        while(posDou < 0){
+            System.out.print("El número debe ser positivo, prueba otra vez: ");
+            posDou = validaDouble();
+        }
+        return posDou;
     }
 
     public static void menuEjercicios(int a){

@@ -14,6 +14,10 @@ public class UD6practica1 {
                 case 2 -> ejercicio2();
                 case 3 -> ejercicio3();
                 case 4 -> ejercicio4();
+                case 5 -> ejercicio5();
+                case 6 -> ejercicio6();
+                case 7 -> ejercicio7();
+                case 8 -> ejercicio8();
                 case 17 -> System.out.println("Hasta la próxima!");
                 default -> System.out.println("Opción no válida.");
             }
@@ -95,6 +99,78 @@ public class UD6practica1 {
                 return 1;
             }
         }
+    /*5. Escribe un programa que pida un valor entero en millas y muestre su equivalente
+    en kilómetros. */
+        public static void ejercicio5(){
+            System.out.print("Dime una distancia en millas: ");
+            int millas = Utils.validaInt();
+            System.out.println("Son " + millas_a_kilometros(millas) + "km.");
+        }
+        public static double millas_a_kilometros(int millas){
+            return millas*1.60934;
+        }
 
+    /*6. Escribe un programa que pida cinco precios y muestre por pantalla el precio de
+    venta de cada uno tras aplicarle un 21% de IVA. */
+        public static void ejercicio6(){
+            double pro = 0;
+            for (int i = 0; i < 5; i++) {
+                System.out.print("Dime el precio del " + (i+1) + "º producto:");
+                pro =  Utils.validaDouble();
+                Utils.validaPositivoDouble(pro);
+                System.out.println("Su precio será de " + precioConIVA(pro) + "€ con IVA.");
+            }
+        }
+        public static double precioConIVA(double precio){
+            return precio*1.21;
+        }
 
+    /*7. Escribe un programa que pida el ancho y alto de un rectángulo y muestre por
+    pantalla su área y su perímetro. */
+        public static void ejercicio7(){
+            System.out.print("Dime el ancho del rectangulo: ");
+            double base =  Utils.validaDouble();
+            Utils.validaPositivoDouble(base);
+            System.out.print("Dime el alto del rectangulo: ");
+            double altura =  Utils.validaDouble();
+            Utils.validaPositivoDouble(altura);
+
+            System.out.println("Su perimetro será: " + perimetroRectangulo(base, altura));
+            System.out.println("Su área será: " + areaRectangulo(base, altura));
+        }
+        public static double perimetroRectangulo(double base, double altura){
+            return 2*(base*altura);
+        }
+        public static double areaRectangulo(double base, double altura){
+            return base*altura;
+        }
+
+    /*8. Escribe un programa que pida un valor N entero y luego muestre: el sumatorio
+    des 1 a N, el productorio de 1 a N y el valor intermedio entre 1 y N. */
+        public static void ejercicio8(){
+            System.out.print("Dime un número: ");
+            int num =  Utils.validaInt();
+            Utils.validaPositivoInt(num);
+
+            System.out.println("La suma de 1 a " + num + " es: " + suma1aN(num));
+            System.out.println("El producto de 1 a " + num + " es: " + producto1aN(num));
+            System.out.println("El valor medio de 1 a " + num + " es: " + intermedio1aN(suma1aN(num), num));
+        }
+        public static int suma1aN(int n){
+            int suma = 0;
+            for (int i = 1; i <= n; i++) {
+                suma += i;
+            }
+            return suma;
+        }
+        public static int producto1aN(int n){
+            int prod = 1;
+            for (int i = 1; i <= n; i++) {
+                prod *= i;
+            }
+            return prod;
+        }
+        public static double intermedio1aN(int suma, int n){
+            return suma/n;
+        }
 }
