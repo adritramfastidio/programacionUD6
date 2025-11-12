@@ -70,7 +70,6 @@ public class UD6practica2 {
         public static void letraDNI(int num) {
             switch (num % 23) {
                 case 1 -> ejercicio1();
-                case 2 -> ejercicio2();
                 case 9 -> System.out.println("Hasta la próxima!");
                 default -> System.out.println("Opción no válida.");
             }
