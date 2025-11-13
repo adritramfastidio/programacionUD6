@@ -124,7 +124,7 @@ public class UD6practica2 {
                     case 3 -> System.out.println("Su volumen es " + volumen(pideRadio()));
                     case 4 -> todas();
                     case 5 -> System.out.println("Hasta la próxima!");
-                }
+                    default -> System.out.println("Opción no válida.");                }
             } while (opc != 5);
         }
         public static int menu() {
