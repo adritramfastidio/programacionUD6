@@ -332,7 +332,7 @@ public class UD6practica1 {
         public static void ejercicio16(){
             System.out.print("Introduce el tamaño del array: ");
             int tamano = Utils.validaInt();
-            int num[] = new int [tamano];
+            int[] num = new int [tamano];
             llenarArrayRandom(num);
             System.out.println(Arrays.toString(num));
         }
